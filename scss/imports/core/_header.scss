@@ -1,11 +1,13 @@
 header{
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 70px;
     @include text(1rem,Avo Reg,1.8em,$white-cl,uppercase);
     text-decoration: none;
     .container-fluid{
-        position: fixed;
-        width: 100%;
-        height: 70px;
-        top: 0;
+        position: relative;
+        height: 100%;
         z-index: 1;
         @include mid(true);
         justify-content: space-between;
@@ -16,21 +18,23 @@ header{
             }
         }
         .menu{
-            @include mid(true);
-            letter-spacing: 0.04em;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
             ul{
                 @include mid(true);
+                text-decoration: none;
                 li{
-                    padding:0px 25px;
+                    padding: 25px;
                     a{
                         color: $white-cl;
                     }
-                    &:first-child{
-                        padding-left: 0px;
-                    }
-                    &:last-child{
-                        padding-right: 0px;
-                    }
+                }
+                &>li:first-child{
+                    padding-left: 0;
+                }
+                &>li:last-child{
+                    padding-right: 0;
                 }
             }
         }
@@ -40,11 +44,19 @@ header{
                 width:25px;
             }
             &__side{
+                display: inline-flex;
                 a{  
                     color: $white-cl;
+                    background-color: $red-cl;
                 }
                 >a:first-child{
-                    padding: 20px 10px;
+                    padding: 5px 25px;
+                    border-radius: 5px;
+                    margin: 0px 10px 0 20px;
+                }
+                >a:last-child{
+                    padding: 5px 10px;
+                    border-radius: 5px;
                 }
             }
         }
