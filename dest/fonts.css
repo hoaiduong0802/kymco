@@ -1,27 +1,77 @@
 /* FONT FACE - font-display: fallback; */
 
 /* VÍ DỤ - tuỳ chỉnh theo từng dự án*/
+@font-face {
+    font-family: 'DIN B';
+    src: url('../fonts/DINCondensed-Bold.woff2') format('woff2'),
+        url('../fonts/DINCondensed-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: fallback;
+}
 
 @font-face {
-    font-family: "ir";
-    src: url("../fonts/Inter-Regular.woff2") format("woff2"), url("../fonts/Inter-Regular.woff") format("woff");
+    font-family: 'UTM Avo';
+    src: url('UTMAvo-Italic.woff2') format('woff2'),
+        url('UTMAvo-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: fallback;
+}
+
+
+@font-face {
+    font-family: 'UTM Avo';
+    src: url('UTMAvoBold.woff2') format('woff2'),
+        url('UTMAvoBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'UTM Avo';
+    src: url('UTMAvo.woff2') format('woff2'),
+        url('UTMAvo.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: fallback;
 }
 
 @font-face {
-    font-family: "im";
-    src: url("../fonts/Inter-Medium.woff2") format("woff2"), url("../fonts/Inter-Medium.woff") format("woff");
-    font-weight: 500;
+    font-family: 'UTM Avo';
+    src: url('UTMAvo-BoldItalic.woff2') format('woff2'),
+        url('UTMAvo-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'Avo B';
+    src: url('../fonts/SVN-Avobold.woff2') format('woff2'),
+        url('../fonts/SVN-Avobold.woff') format('woff');
+    font-weight: bold;
     font-style: normal;
     font-display: fallback;
 }
 
 @font-face {
-    font-family: "ib";
-    src: url("../fonts/Inter-Bold.woff2") format("woff2"), url("../fonts/Inter-Bold.woff") format("woff");
-    font-weight: bold;
+    font-family: 'SFU DIN';
+    src: url('SFUDINEngschrift.woff2') format('woff2'),
+        url('SFUDINEngschrift.woff') format('woff');
+    font-weight: normal;
     font-style: normal;
     font-display: fallback;
 }
+
+@font-face {
+    font-family: 'Avo Reg';
+    src: url('../fonts/SVN-Avo.woff2') format('woff2'),
+        url('../fonts/SVN-Avo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback;
+}
+
+
