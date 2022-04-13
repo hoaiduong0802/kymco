@@ -15,6 +15,8 @@
                     position: absolute;
                     left: -50px;
                     width: max-content;
+                    writing-mode: tb-rl;
+                    padding-bottom: 10px;
                 }
                 p{
                     @include text(4rem,Avo B,null,$white-cl,null);
