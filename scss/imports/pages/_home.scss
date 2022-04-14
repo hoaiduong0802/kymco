@@ -28,9 +28,12 @@
             .product{
                 position: absolute;
                 width: 100%;
+                height: 100%;
                 img{
-                    height: 100vh;
+                    height: 100%;
                     width: 100%;
+                    overflow: hidden;
+                    @include mid();
                 }
             }
         }
@@ -40,15 +43,22 @@
     bottom: 0;
     width: 100%;
         &-left{
-            @include mid(true);
+            display: inline-flex;
             flex-direction: column;
             span{
                 color: $white-cl;
-                @include text(1.2rem,UTM Avo Reg,1.8rem,$white-cl,uppercase)
+                @include text(1.2rem,UTM Avo Reg,1.8rem,$white-cl,uppercase);
+                writing-mode: tb-rl;
+                padding-bottom: 10px;
+                cursor: pointer;
             }
             img{
                 width: 20px;
             }
+        }
+        &-right{
+            @include text(6rem, DIN B, 3.3rem, $white-cl,uppercase);
+            letter-spacing: 0.04em;
         }
        .container-fluid{
            display: flex;
@@ -56,5 +66,144 @@
            align-items: flex-end;
            padding-bottom: 50px;
        }
+    }
+    @include sm{
+        &__item{
+            .text{
+                span{
+                    font-size: 15.4rem;
+                    left: -40px;
+                }
+                p{
+                    top: 35px;
+                    line-height: 1em;
+                }
+            }
+            .product{
+                img{
+                    object-fit: cover;
+                }
+            }
+        }
+        &__bottom{
+            display: none;
+        }
+    }
+}
+@include xs{
+    .slider{
+        height: 183px;
+        width: 100%;
+        &__item{
+            height: 183px;
+            &-content{
+                position: relative;
+                height: 100%;
+                .text{
+                    position: absolute;
+                    height: 100%;
+                    @include transform(translateY(-50%));
+                    span{
+                        font-size: 5.7rem;
+                        line-height: 4.2rem;
+                        left: -12px;
+                        top: 50%;
+                        @include transform(translateY(-50%));
+                    }
+                    p{
+                        top: 25px;
+                        font-size: 2rem;
+                        width: 210px;
+                        margin-left: 10px;
+                        top: 50%;
+                    }
+                }
+                .product{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    overflow: hidden;
+                }
+            }
+        }
+        &__bottom{
+            position: absolute;
+            display: block;
+            &-left{
+                span{
+                    display: none;
+                }
+                img{
+                    position: absolute;
+                    bottom: 10px;
+                    width: 10px;
+                }
+            }
+            &-right{
+                display: none;
+            }
+        }
+    }
+}
+.mission_hotitem{
+    .container{
+        margin-right: unset;
+        padding-right: unset;
+    }
+    .mission{
+        @include mid(true);
+        &__content{
+            margin-left: -175px;
+            z-index: 1;
+            h2{
+                position: relative;
+                &::before{
+                    @include linetext(220px,3px,$black-cl);
+                    left: -159px;
+                    top: -35px;
+                }
+            }
+            p{
+                margin-right: -150px;
+            }
+        }
+        &__img{
+            position: relative;
+            height: 455px;
+            img{
+                max-width: max-content;
+                height: 100%;
+            }
+            &-button{
+                position: absolute;
+                left: -115px;
+                bottom: 0;
+                // display: inline-flex;
+                // justify-content: space-around;
+                // align-items: center;
+                background-color: $red-cl;
+                height: 65px;
+                a{
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    height: 100%;
+                    width: 110px;
+                    &:last-child{
+                        transform: rotate(180deg);
+                    }
+                    img{
+                        height: 30px;
+                    }
+                }
+                span{
+                    display: inline-block;
+                    width: 0;
+                    height: 2em;
+                    border-left: 1px solid $white-cl;
+                    border-right: 1px solid $white-cl;
+                }
+            }
+        }
     }
 }

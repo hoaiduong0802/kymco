@@ -120,3 +120,12 @@ article {
         line-height: var(--h2-lh);
     }
 }
+.title-h2{
+    @include text(5rem,DIN EngA, 1.8rem,$black-cl,uppercase);
+    letter-spacing: 0.04em;
+    padding-bottom: 35px;
+}
+.content-text{
+    @include text(1.8rem, Avo Reg, null, $black-cl, null);
+    letter-spacing: 0.04em;
+}

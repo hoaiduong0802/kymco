@@ -213,3 +213,11 @@
 	position: relative;
   }
   
+  @mixin linetext($linewidth,$lineheight,$linebgcolor){
+	position: absolute;
+	content: '';
+	width: $linewidth;
+	height: $lineheight;
+	background-color: $linebgcolor;
+	display: block;
+  }

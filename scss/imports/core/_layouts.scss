@@ -23,7 +23,7 @@ body {
         overflow: hidden;
         section{
             &.pdsection{
-                padding: var(--pd-section)
+                padding: var(--pd-section) 0;
             }
         }
     }

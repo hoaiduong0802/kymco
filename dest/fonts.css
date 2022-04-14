@@ -66,6 +66,15 @@
 }
 
 @font-face {
+    font-family: 'DIN EngA';
+    src: url('../fonts/SFUDINEngAlt.woff2') format('woff2'),
+        url('../fonts/SFUDINEngAlt.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
     font-family: 'Avo Reg';
     src: url('../fonts/SVN-Avo.woff2') format('woff2'),
         url('../fonts/SVN-Avo.woff') format('woff');
