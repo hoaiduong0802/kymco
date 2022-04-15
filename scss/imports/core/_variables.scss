@@ -65,7 +65,7 @@ $cubic: cubic-bezier(0.84, 0.13, 0.33, 0.97);
     --height-button: 56px;
     --ptop: 150px;
     --pd-section: 120px;
-
+    --pd-sectionxs:90px;
     @media (max-width: $sm-max) {
         // Tablet
     }
@@ -86,7 +86,7 @@ $cubic: cubic-bezier(0.84, 0.13, 0.33, 0.97);
         --gap: 20px;
 
         --height-header: 70px;
-        --pd-section: 120px;
+        --pd-section: 90px;
         --ptop: 120px;
     }
 }

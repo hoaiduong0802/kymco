@@ -145,7 +145,7 @@
         }
     }
 }
-.mission_hotitem{
+.missions{
     .container{
         margin-right: unset;
         padding-right: unset;
@@ -199,6 +199,162 @@
                     height: 2em;
                     border-left: 1px solid $white-cl;
                     border-right: 1px solid $white-cl;
+                }
+            }
+        }
+    }
+    @include xs{
+        .container{
+            margin-right: auto;
+            padding-right: calc(var(--gap) / 2);
+        }
+        .mission{
+            flex-direction: column;
+            &__content{
+                margin-left: unset;
+                h2{
+                    &::before{
+                        left: -175px;
+                        top: -15px;
+                    }
+                }
+                p{
+                    margin-right: unset;
+                    padding-bottom: 10px;
+                }
+            }
+            &__img{
+                height: auto;
+                display: inline-flex;
+                img{
+                    height: auto;
+                    max-width: 100%;
+                }
+                &-button{
+                    left: 0;
+                    height: 40px;
+                    a{
+                        width: 35px;
+                    }
+                    span{
+                        height: 30px;
+                        border-left: unset;
+                        border-right: 2px solid #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.hotitems{
+    &.pdsection{
+        padding-top: unset;
+    }
+    .hotitem{
+        &__content{
+            text-align: center;
+        }
+        &__wrap{
+            padding-top: 80px;
+            @include mid(true);
+            justify-content: space-between;
+            &-products{
+                position: relative;
+                .button{
+                    top: 140px;
+                    left: 20px;
+                }
+                &:nth-child(2){
+                    .button{
+                        top: 175px;
+                        left: 47px;
+                    }
+                }
+            }
+        }
+        &__bottom{
+            &.button{
+                margin-top: 70px;
+                left: 50%;
+                @include transform(translateX(-50%));
+            }
+        }
+    }
+    @include xs{
+        .hotitem{
+            &__wrap{
+                padding-top: 45px;
+                height: 350px;
+                &-products{
+                    height: 100%;
+                    overflow: hidden;
+                    img{
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                        overflow: hidden;
+                    }
+                    .button{
+                        padding: 0 10px;
+                        height: 20px;
+                        display: inline-flex;
+                        align-items: center;
+                        left: -20px;
+                        top: 100px;
+                        a{
+                            font-size: 1rem;
+                        }
+                    }
+                    &:nth-child(2){
+                        .button{
+                            top: 90px;
+                            left: -20px;
+                        }
+                    }
+                }
+            }
+            &__bottom{
+                &.button{
+                    text-align: center;
+                    position: inherit;
+                    margin-top: 25px;
+                    @include transform(unset)
+                }
+            }
+        }
+    }
+}
+.chooseitem{
+    background: url(/img/origin_banner_products.jpg);
+    @include bg;
+    height: 650px;
+    &__content{
+        display: inline-block;
+        padding-bottom: 50px;
+        h2{
+            max-width: 240px;
+            line-height: 5.8rem;
+            padding-bottom: unset;
+        }
+    }
+}
+@include xs{
+    .chooseitem{
+        background: url(/img/banner_products_mobile.jpg);
+        @include bg ;
+        height: 150px;
+        position: relative;
+        .container{
+            position: absolute;
+            height: 100%;
+            top: 0;
+            left: 0;
+            .chooseitem__content{
+                padding-bottom: 10px;
+                h2{
+                    line-height: 3rem;
+                    width: 145px;
                 }
             }
         }

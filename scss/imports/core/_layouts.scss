@@ -17,6 +17,7 @@ body {
     max-width: $container-max-width;
     margin: auto;
     --pd-section:120px;
+    --pd-sectionxs:60px;
     main{
         width: 100%;
         margin: auto;
@@ -24,6 +25,9 @@ body {
         section{
             &.pdsection{
                 padding: var(--pd-section) 0;
+            }
+            &.pdsection-xs{
+                padding: var(--pd-sectionxs) 0;
             }
         }
     }

@@ -129,3 +129,30 @@ article {
     @include text(1.8rem, Avo Reg, null, $black-cl, null);
     letter-spacing: 0.04em;
 }
+@include xs{
+    .title-h2{
+        font-size: 3rem;
+        padding-bottom: 15px;
+    }
+    .content-text{
+        line-height: normal;
+        font-size: 1.5rem;
+    }
+}
+.container{
+    .button{
+        position: absolute;
+        background-color: $red-cl;
+        border-radius: 20px;
+        padding:3px 20px 1px 20px;
+        a{
+            text-decoration: none;
+            @include text(2rem,DIN EngA,1.2rem,$white-cl,uppercase);
+        }
+    }
+    @include xs{
+        .button{
+            border-radius: 10px;
+        }
+    }
+}
