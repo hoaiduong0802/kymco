@@ -1,1 +1,58 @@
 // css footer
+.footer{
+    padding: 50px 0;
+    background-color: $black-cl;
+    text-align: center;
+    h2{
+        line-height: unset !important;
+        color: $white-cl;
+        font-size: 3rem;
+        padding-bottom: unset;
+    }
+    &-icon{
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px 0 80px 0;
+        a{
+            img{
+                height: 40px;
+                background-color: white;
+                mix-blend-mode: difference;
+            }
+            &:last-child{
+                padding-left: 20px;
+                img{
+                    width: 50px;
+                    height: 30px;
+                }
+            }
+        }
+    }
+    &-contact{
+        @include text(1rem,UTM Avo Reg,null,$white-cl,uppercase);
+        font-weight: bold;
+        padding-bottom: 50px;
+        a{
+            text-decoration: none;
+            color: white;
+            padding: 0 20px 0 20px;
+            &:nth-child(n+2){
+                border-left: 1px solid white;
+            }
+
+        }
+    }
+    &-reserved{
+        @include mid(true);
+        flex-direction: column;
+        img{
+            width: 175px;
+        }
+        span{
+            @include text(1rem,UTM Avo Reg,null,$white-cl,null);
+            font-weight: bold;
+            color: $white-cl;
+        }
+    }
+}

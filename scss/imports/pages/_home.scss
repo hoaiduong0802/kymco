@@ -146,30 +146,37 @@
     }
 }
 .missions{
-    .container{
-        margin-right: unset;
-        padding-right: unset;
-    }
+    position: relative;
+    height: 455px;
+    margin: 120px 0;
     .mission{
-        @include mid(true);
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-start;
+        height: 100%;
         &__content{
-            margin-left: -175px;
             z-index: 1;
             h2{
+                width: max-content;
                 position: relative;
+                line-height: unset;
+                padding-bottom: unset;
                 &::before{
                     @include linetext(220px,3px,$black-cl);
-                    left: -159px;
-                    top: -35px;
+                    left: -40%;
+                    top: -20px;
                 }
             }
             p{
-                margin-right: -150px;
+                padding-top: 30px;
+                max-width: 450px;
             }
         }
         &__img{
-            position: relative;
-            height: 455px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: inline-flex;
             img{
                 max-width: max-content;
                 height: 100%;
@@ -464,6 +471,27 @@
                 width: 100%;
                 text-align: center;
             }
+        }
+    }
+}
+
+.network{
+    height: 650px;
+    position: relative;
+    &__background{
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        width: 100%;
+        img{
+            width: 100%;
+        }
+    }
+    &__content{
+        padding-top: 50px;
+        text-align: center;
+        h2{
+            line-height: unset;
         }
     }
 }

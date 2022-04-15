@@ -4,6 +4,7 @@ header{
     width: 100%;
     height: 70px;
     @include text(1rem,Avo Reg,1.8em,$white-cl,uppercase);
+    font-weight: bold;
     text-decoration: none;
     .container-fluid{
         position: relative;
