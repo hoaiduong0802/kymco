@@ -176,7 +176,7 @@
             }
             &-button{
                 position: absolute;
-                left: -115px;
+                left: -65px;
                 bottom: 0;
                 background-color: $red-cl;
                 height: 65px;
@@ -185,7 +185,7 @@
                     align-items: center;
                     justify-content: space-around;
                     height: 100%;
-                    width: 110px;
+                    width: 60px;
                     &:last-child{
                         transform: rotate(180deg);
                     }
@@ -348,7 +348,7 @@
         .container{
             position: absolute;
             height: 100%;
-            top: 0;
+            top: 10px;
             left: 0;
             .chooseitem__content{
                 padding-bottom: 10px;
@@ -356,6 +356,113 @@
                     line-height: 3rem;
                     width: 145px;
                 }
+            }
+        }
+    }
+}
+
+.news{
+    position: relative;
+    &__content{
+        text-align: center;
+        padding-bottom: 80px;
+    }
+    &__item{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: 515px;
+        column-gap: 30px;
+        cursor: pointer;
+        position: relative;
+        &-box{
+            border: 1px solid #d8d8d8;
+            display: flex;
+            flex-direction: column;
+            .news__item-img{
+                position: relative;
+                padding-bottom: 92%;
+                overflow: hidden;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    @include midimg;
+                    @include transform(translate(-50%,-50%) scale(1));
+                }
+            }
+            .news__item-content{
+                position: relative;
+                flex: 1;
+                .title{
+                    padding-top: 10px;
+                    text-align: center;
+                    span{
+                        @include text(1.7rem,DIN B,1.8rem,$black-cl,uppercase);
+                        letter-spacing: 0.04em;
+                        font-weight: bold;
+                    }
+                    h3{
+                        @include text(3rem,DIN B,null, $black-cl,uppercase);
+                        letter-spacing: 0.04em;
+                    }
+                    p{
+                        @include text(1rem,UTM Avo Reg,2.2rem,$black-cl,null);
+                        font-weight: bold;
+                    }
+                }
+                a{
+                    position: absolute;
+                    bottom: 35px;
+                    left: 50%;
+                    @include transform(translateX(-50%));
+                    @include text(1rem,UTM Avo Reg,1.8rem,$black-cl,null);
+                    font-weight: bold;
+                    text-decoration: underline;
+                    color: $black-cl;
+                }
+            }
+        }
+        &-button{
+            position: absolute;
+            left: 50%;
+            bottom: -60px;
+            @include transform(translateX(-50%));
+        }
+    }
+    @include xs{
+        &__content{
+            padding-bottom: 50px;
+        }
+        &__item{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: unset;
+            &-content{
+                .title{
+                    p{
+                        max-width: 270px;
+                        margin: 0 auto;
+                    }
+                }
+            }
+            &-box{
+                .news__item-content{
+                    text-align: center;
+                    .title{
+                        padding-bottom: 20px;
+                        h3{
+                            max-width: 220px;
+                            margin: 0 auto;
+                        }
+                    }
+                    a{
+                        position: unset;
+                    }
+                }
+            }
+            &-button{
+                width: 100%;
+                text-align: center;
             }
         }
     }
