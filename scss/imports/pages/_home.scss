@@ -212,11 +212,12 @@
     }
     @include xs{
         .container{
-            margin-right: auto;
-            padding-right: calc(var(--gap) / 2);
+            height: auto !important;
         }
         .mission{
+            @include mid(true);
             flex-direction: column;
+            height: auto;
             &__content{
                 margin-left: unset;
                 h2{
@@ -231,8 +232,8 @@
                 }
             }
             &__img{
-                height: auto;
                 display: inline-flex;
+                position: relative;
                 img{
                     height: auto;
                     max-width: 100%;
@@ -240,6 +241,7 @@
                 &-button{
                     left: 0;
                     height: 40px;
+                    position: absolute;
                     a{
                         width: 35px;
                     }
@@ -253,7 +255,12 @@
         }
     }
 }
-
+@include xs{
+    .missions{
+        height: auto;
+        margin: 60px 0;
+    }
+}
 .hotitems{
     &.pdsection{
         padding-top: unset;
@@ -275,7 +282,12 @@
                 &:nth-child(2){
                     .button{
                         top: 175px;
-                        left: 47px;
+                        left: 50px;
+                    }
+                }
+                &:last-child{
+                    .button{
+                        left: 13px;
                     }
                 }
             }
@@ -332,6 +344,13 @@
         }
     }
 }
+@include xs{
+    .hotitems{
+        &.pdsection{
+            padding: unset;
+        }
+    }
+}
 .chooseitem{
     background: url(/img/origin_banner_products.jpg);
     @include bg;
@@ -352,6 +371,8 @@
         @include bg ;
         height: 150px;
         position: relative;
+        padding: unset !important;
+        margin: 60px 0;
         .container{
             position: absolute;
             height: 100%;
@@ -450,6 +471,9 @@
                         max-width: 270px;
                         margin: 0 auto;
                     }
+                    h3{
+                        max-width: 240px !important;
+                    }
                 }
             }
             &-box{
@@ -474,7 +498,23 @@
         }
     }
 }
-
+@include xs{
+    .news{
+        &.pdsection{
+            padding: unset;
+        }
+        margin: 60px 0;
+        &__item{
+            &-button{
+                margin-top: 40px;
+                position: initial !important;
+                left: unset;
+                bottom: unset;
+                transform: initial;
+            }
+        }
+    }
+}
 .network{
     height: 650px;
     position: relative;
@@ -493,5 +533,10 @@
         h2{
             line-height: unset;
         }
+    }
+}
+@include xs{
+    .network{
+        display: none;
     }
 }

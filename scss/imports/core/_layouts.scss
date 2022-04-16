@@ -26,8 +26,10 @@ body {
             &.pdsection{
                 padding: var(--pd-section) 0;
             }
-            &.pdsection-xs{
-                padding: var(--pd-sectionxs) 0;
+            @include xs{
+                &.pdsectionxs{
+                    padding: var(--pd-sectionxs) 0;
+                }
             }
         }
     }
