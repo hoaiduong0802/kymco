@@ -1,0 +1,41 @@
+.herobanner{
+    background: url(/img/banner_products.jpg);
+    @include bg;
+    height: 525px;
+    object-fit: cover;
+    overflow: hidden;
+    @include xs{
+        height: 180px;
+        max-width: 100%;
+        object-fit: cover;
+        overflow: hidden;
+    }
+}
+.allproducts{
+    &__title{
+        @include mid(true);
+        display:flex;
+        flex-direction: column;
+        p{
+            max-width: 750px;
+            margin: 0 auto;
+            text-align: center;
+        }
+    }
+}
+.selectitem{
+   &__title{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 120px;
+    a{
+        @include text(4.2rem,DIN EngA, null, $black-cl, uppercase);
+        padding: 0 20px;
+    }
+   }
+   &__item{
+       background-color: $grey-cl;
+       @include mid(true);
+   }
+}

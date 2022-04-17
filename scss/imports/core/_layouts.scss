@@ -27,7 +27,7 @@ body {
                 padding: var(--pd-section) 0;
             }
             @include xs{
-                &.pdsectionxs{
+                &.pdsection{
                     padding: var(--pd-sectionxs) 0;
                 }
             }

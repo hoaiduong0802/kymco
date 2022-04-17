@@ -121,7 +121,7 @@ article {
     }
 }
 .title-h2{
-    @include text(5rem,DIN EngA, 1.8rem,$black-cl,uppercase);
+    @include text(5rem,DIN EngA, null,$black-cl,uppercase);
     letter-spacing: 0.04em;
     padding-bottom: 35px;
 }
@@ -141,7 +141,6 @@ article {
 }
 .container{
     .button{
-        position: absolute;
         background-color: $red-cl;
         border-radius: 20px;
         padding:3px 20px 1px 20px;

@@ -276,6 +276,7 @@
             &-products{
                 position: relative;
                 .button{
+                    position: absolute;
                     top: 140px;
                     left: 20px;
                 }
@@ -294,6 +295,7 @@
         }
         &__bottom{
             &.button{
+                position: absolute;
                 margin-top: 70px;
                 left: 50%;
                 @include transform(translateX(-50%));
@@ -363,6 +365,9 @@
             line-height: 5.8rem;
             padding-bottom: unset;
         }
+    }
+    &__button{
+        position: absolute;
     }
 }
 @include xs{
@@ -447,6 +452,14 @@
                     font-weight: bold;
                     text-decoration: underline;
                     color: $black-cl;
+                }
+            }
+            &:nth-child(3){
+                .title{
+                    p{
+                        max-width: 340px;
+                        margin: 0 auto;
+                    }
                 }
             }
         }
