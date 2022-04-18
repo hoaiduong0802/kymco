@@ -74,16 +74,28 @@
                         @include text(1rem,UTM Avo Reg,1.8rem,$black-cl,null);
                         font-weight: bold;
                         text-decoration: underline;
-                        color: $black-cl;    
+                        color: $black-cl;
                     }
                 }
             }
             .newswrap__button{
                 @include mid(true);
+                grid-column-start: 1;
+                grid-column-end: 4;
+                a{
+                    padding: 10px 25px;
+                    margin: 0px 10px;
+                    border: 1px solid $grey-cl;
+                    @include text(1.7rem,Arial,null,$black-cl,null);
+                    font-weight: bold;
+                    @include transition($t);
+                    &:hover{
+                        background-color: $red-cl;
+                        color: $white-cl;
+                        @include transition($t);
+                    }
+                }
             }
         }
     }
-}
-.footer{
-    display: none;
 }

@@ -305,27 +305,4 @@
         }
     }
     }
-    .footer{
-        .footer-icon{
-            width: 25%;
-            a{
-                width: calc(100% / 4);
-                img{
-                    background-color: $black-cl;
-                }
-                &:last-child{
-                    padding-left: unset;
-                    img{
-                        max-width: 100%;
-                        @include size(unset,40px);
-                    }
-                }
-            }
-        }
-        @include xs{
-            .footer-icon{
-                width: 50%;
-            }
-        }
-    }
 }
