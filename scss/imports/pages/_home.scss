@@ -354,7 +354,7 @@
     }
 }
 .chooseitem{
-    background: url(/img/origin_banner_products.jpg);
+    background: url(../img/origin_banner_products.jpg);
     @include bg;
     height: 650px;
     &__content{
@@ -372,7 +372,7 @@
 }
 @include xs{
     .chooseitem{
-        background: url(/img/banner_products_mobile.jpg);
+        background: url(../img/banner_products_mobile.jpg);
         @include bg ;
         height: 150px;
         position: relative;
