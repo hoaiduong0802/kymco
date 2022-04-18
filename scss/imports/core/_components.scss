@@ -125,6 +125,14 @@ article {
     letter-spacing: 0.04em;
     padding-bottom: 35px;
 }
+.title-h3{
+    @include text(1.1rem,DIN EngA,null,$black-cl,uppercase);
+    font-weight: bold;
+}
+.title-h4{
+    @include text(2.4rem,DIN EngA,null,$black-cl,uppercase);
+    font-weight: bold;
+}
 .content-text{
     @include text(1.8rem, Avo Reg, null, $black-cl, null);
     letter-spacing: 0.04em;
