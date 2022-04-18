@@ -6,6 +6,7 @@ header{
     @include text(1rem,Avo Reg,1.8em,$white-cl,uppercase);
     font-weight: bold;
     text-decoration: none;
+    @include transition($t);
     .container-fluid{
         position: relative;
         height: 100%;
@@ -42,6 +43,7 @@ header{
         }
         .contact{
             @include mid(true);
+            cursor: pointer;
             img{
                 width:25px;
             }
@@ -61,12 +63,83 @@ header{
                     border-radius: 5px;
                 }
             }
+            .btnmenu{
+                width: 40px;
+                height: 22px;
+                cursor: pointer;
+                position: relative;
+                display: none;
+                z-index: 10;
+                span{
+                    display: block;
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    background-color: $white-cl;
+                    top: 50%;
+                    @include transform(translateY(-50%));
+                }
+                &::before{
+                    position: absolute;
+                    top: 0;
+                    content: "";
+                    width: 100%;
+                    height: 2px;
+                    display: block;
+                    background-color: $white-cl;
+                    @include transform(rotate(0deg) translateY(0px));
+                    @include transition($t);
+                }
+                &::after{
+                    position: absolute;
+                    bottom: 0;
+                    content: "";
+                    width: 100%;
+                    height: 2px;
+                    display: block;
+                    background: $white-cl;
+                    @include transform (rotate(0deg) translateY(0px));
+                    @include transition($t);
+                }
+            }
+            @include xs{
+                .btnmenu{
+                    display: block;
+                    margin-left: 20px;
+                    &.active{
+                        &::before{
+                            transform: rotate(45deg) translate(7px, 8px); 
+                            @include transition(transform 0.3s)
+                        }
+                        span{
+                            opacity: 0;
+                            @include transition(transform 0.3s)
+                  
+                        }
+                        &::after{
+                            transform: rotate(-45deg) translate(5px, -8px);
+                            @include transition(transform 0.3s)
+                  
+                        }
+                    }
+                }
+            }
         }
     }
     @include sm{
         .container-fluid{
+            height: auto;
+            margin-top: 10px;
+            .logo{
+                position: unset ;
+            }            
             .menu{
                 display: none;
+            }
+            .contact{
+                &__side{
+                    display: none;
+                }
             }
         }
     }
@@ -76,10 +149,48 @@ header{
                 width: 100px;
                 position: absolute;
                 top: 10px;
+                position:unset;
             }
-            .contact{
-                display: none;
+        }
+    }
+    &.bgheader{
+        background-color: $red-cl;
+        @include transition($t);
+        height: 60px;
+        @include sm{
+            .container-fluid{
+                margin-top: unset;
+                height: 100%;
             }
+        }
+    }
+    .nav{
+        height: 100vh;
+        width: 100vw;
+        background-color: $red-cl;
+        position: fixed;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        visibility: hidden;
+        @include transition($t);
+        ul{
+            @include mid(true);
+            height: 100%;
+            flex-direction: column;
+            li{
+                padding: 40px 0;
+                a{
+                    text-decoration: none;            
+                    @include text(2rem,Avo Reg,null,$white-cl,uppercase);
+                    padding: 40px 0;
+                }
+            }
+        }
+        &.active{
+            opacity: 1;
+            visibility: visible;
+            @include transition($t);
         }
     }
 }

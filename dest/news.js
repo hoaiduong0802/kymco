@@ -1,9 +1,3 @@
-// Test Hieght
-const pageY = document.addEventListener('scroll', function () {
-    console.log(window.pageYOffset)
-})
-
-//Scroll Background Header
 const header = document.querySelector("header");
 document.addEventListener('scroll', function (e) {
     if (window.pageYOffset >= 500) {
@@ -35,4 +29,3 @@ function menuMobile() {
     })
 }
 menuMobile()
-
