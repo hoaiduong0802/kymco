@@ -1,0 +1,12 @@
+.detailpage{
+    .herobanner{
+        background: url(/img/background_products_detail.jpg);
+        height: 80vh;
+        object-fit: cover;
+        overflow: hidden;
+        @include bg;
+    }
+    .footer{
+        display: none;
+    }
+}

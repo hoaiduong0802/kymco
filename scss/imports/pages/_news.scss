@@ -1,0 +1,89 @@
+.newspage{
+    .herobanner{
+        background: url(/img/news_banner.jpg);
+        height: 100vh;
+        width: 100%;
+        object-fit: cover;
+        overflow: hidden;
+        text-align: center;
+        @include bg;
+        .content-text{
+            color: $white-cl;
+        }
+        @include mid(true);
+        flex-direction: column;
+        p{
+            padding-top: 30px;
+        }
+    }
+    @include xs{
+        .herobanner{
+            height: 180px;
+        }
+    }
+    .newswrap{
+       .container{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(3,550px);
+            grid-column-gap: 30px;
+            grid-row-gap: 80px;
+            cursor: pointer;
+            position: relative;
+            .newswrap__item{
+                border: 1px solid #d8d8d8;
+                display: flex;
+                flex-direction: column;
+                &-img{
+                    position: relative;
+                    padding-bottom: 92%;
+                    overflow: hidden;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        @include midimg;
+                        @include transform(translate(-50%,-50%) scale(1));
+                    }
+                }
+                &-content{
+                    flex: 1;
+                    position: relative;
+                    .title{
+                        padding-top: 10px;
+                        text-align: center;
+                        span{
+                            @include text(1.7rem,DIN B,1.8rem,$black-cl,uppercase);
+                            letter-spacing: 0.04em;
+                            font-weight: bold;
+                        }
+                        h3{
+                            @include text(3rem,DIN B,null, $black-cl,uppercase);
+                            letter-spacing: 0.04em;
+                        }
+                        p{
+                            @include text(1rem,UTM Avo Reg,2.2rem,$black-cl,null);
+                            font-weight: bold;
+                        }
+                    }
+                    a{
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        @include transform(translateX(-50%));
+                        @include text(1rem,UTM Avo Reg,1.8rem,$black-cl,null);
+                        font-weight: bold;
+                        text-decoration: underline;
+                        color: $black-cl;    
+                    }
+                }
+            }
+            .newswrap__button{
+                @include mid(true);
+            }
+        }
+    }
+}
+.footer{
+    display: none;
+}
