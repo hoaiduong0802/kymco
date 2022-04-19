@@ -36,3 +36,23 @@ function menuMobile() {
 }
 menuMobile()
 
+
+
+
+//Slider
+let $carousel = $(".slider .slider__item");
+$carousel.flickity({
+    //option
+    prevNextButtons: false,
+    contain:true,
+    wrapAround:true,
+    autoPlay: true,
+    pageDots: false,
+    on:{
+        change: function(index){
+            let number = $(".slider .slider__bottom-right .current_page");
+            let indexPage = index + 1;
+            number.text(indexPage.toString().padStart(2,0));
+        }
+    }
+})

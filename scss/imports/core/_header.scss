@@ -16,8 +16,13 @@ header{
         .logo{
             width: 175px;
             cursor: pointer;
+            position: relative;
             a{
-                display: none;
+                display: flex;
+                position: absolute;
+                width: 175px;
+                opacity: 0;
+                height: 100%;
             }
         }
         .menu{
@@ -30,7 +35,22 @@ header{
                 li{
                     padding: 25px;
                     a{
-                        color: $white-cl;
+                        color: $grey-cl;
+                        position: relative;
+                        &::after{
+                            @include linetext(100%,2px,$white-cl);
+                            @include transform(scaleX(0));
+                            @include transform-origin(right center);
+                            @include transition($t);
+                        }
+                        &:hover{
+                            color: $white-cl;
+                            &::after{
+                                @include transform(scaleX(1));
+                                @include transform-origin(left center);
+                                @include transition($t);
+                            }
+                        }
                     }
                 }
                 &>li:first-child{
