@@ -165,118 +165,72 @@
     }
 }
 .missions{
-    position: relative;
-    height: 455px;
-    margin: 120px 0;
-    .mission{
-        display: inline-flex;
-        align-items: center;
-        justify-content: flex-start;
-        height: 100%;
-        &__content{
-            z-index: 1;
+    &__item{
+        display: flex;
+        justify-content: space-between;
+        height: 450px;
+        &-content{
+            max-width: 450px;
+            padding-left: 175px;
+            align-self: center;
+            z-index: 10;
+            position: relative;
             h2{
-                width: max-content;
-                position: relative;
-                line-height: unset;
-                padding-bottom: unset;
-                &::before{
-                    @include linetext(220px,3px,$black-cl);
-                    left: -40%;
+                &::before{  
+                    @include linetext(300px,3px,$black-cl);
+                    left: 0;
                     top: -20px;
                 }
             }
-            p{
-                padding-top: 30px;
-                max-width: 450px;
+            h2,p{
+                width: 470px;
             }
         }
-        &__img{
-            position: absolute;
-            top: 0;
-            right: 0;
-            display: inline-flex;
-            img{
-                max-width: max-content;
-                height: 100%;
-            }
-            &-button{
+        &-img{
+            position: relative;
+            .slider_button{
                 position: absolute;
-                left: -65px;
+                left: -130px;
                 bottom: 0;
+                max-height: 60px;
+                width: 130px;
+                justify-content: center;
                 background-color: $red-cl;
-                height: 65px;
+                display: inline-flex;
+                padding: 20px;
+                z-index: 10;
                 a{
-                    display: inline-flex;
-                    align-items: center;
-                    justify-content: space-around;
-                    height: 100%;
-                    width: 60px;
-                    &:last-child{
-                        transform: rotate(180deg);
-                    }
                     img{
-                        height: 30px;
+                        width: 12px;
+                        height: 100%;
+                    }
+                    &:first-child{
+                        padding-right: 25px;
+                    }
+                    &:last-child{
+                        padding-left:25px;
+                        img{
+                            @include transform(rotate(180deg));
+                        }
                     }
                 }
                 span{
-                    display: inline-block;
-                    width: 0;
-                    height: 2em;
-                    border-right: 2px solid $white-cl;
+                    content: "";
+                    color: $white-cl;
+                    border-left: 2px solid $white-cl;
                 }
             }
-        }
-    }
-    @include xs{
-        .container{
-            height: auto !important;
-        }
-        .mission{
-            @include mid(true);
-            flex-direction: column;
-            height: auto;
-            &__content{
-                margin-left: unset;
-                h2{
-                    &::before{
-                        left: -175px;
-                        top: -15px;
-                    }
-                }
-                p{
-                    margin-right: unset;
-                    padding-bottom: 10px;
-                }
-            }
-            &__img{
-                display: inline-flex;
-                position: relative;
+            .slider_img{
+                height: 450px;
+                width: 970px;
+                margin-left: -70px;
                 img{
-                    height: auto;
-                    max-width: 100%;
-                }
-                &-button{
-                    left: 0;
-                    height: 40px;
-                    position: absolute;
-                    a{
-                        width: 35px;
-                    }
-                    span{
-                        height: 30px;
-                        border-left: unset;
-                        border-right: 2px solid #fff;
-                    }
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
                 }
             }
         }
-    }
-}
-@include xs{
-    .missions{
-        height: auto;
-        margin: 60px 0;
     }
 }
 .hotitems{

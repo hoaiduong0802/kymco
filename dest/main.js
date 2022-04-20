@@ -1,7 +1,39 @@
-// Test Hieght
-const pageY = document.addEventListener('scroll', function () {
-    console.log(window.pageYOffset)
+window.addEventListener('DOMContentLoaded', (event) => {
+    console.log('DOM fully loaded and parsed');
+});
+
+//Slider Hero_Banner
+let $carouselHerobanner = $(".slider .slider__item");
+$carouselHerobanner.flickity({
+    //option
+    prevNextButtons: false,
+    contain:true,
+    wrapAround:true,
+    autoPlay: true,
+    pageDots: false,
+    on:{
+        change: function(index){
+            let number = $(".slider .slider__bottom-right .current_page");
+            let indexPage = index + 1;
+            number.text(indexPage.toString().padStart(2,0));
+        }
+    }
 })
+
+//Slider Missions
+let $carouselMissions = $(".slider_img");
+$carouselMissions.flickity({
+    //option
+    prevNextButtons: false,
+    pageDots: false,
+    contain:true,
+    wrapAround:true,
+    autoPlay:false,
+})
+// Test Hieght
+// const pageY = document.addEventListener('scroll', function () {
+//     console.log(window.pageYOffset)
+// })
 
 //Scroll Background Header
 const header = document.querySelector("header");
@@ -36,23 +68,16 @@ function menuMobile() {
 }
 menuMobile()
 
-
-
-
-//Slider
-let $carousel = $(".slider .slider__item");
-$carousel.flickity({
-    //option
-    prevNextButtons: false,
-    contain:true,
-    wrapAround:true,
-    autoPlay: true,
-    pageDots: false,
-    on:{
-        change: function(index){
-            let number = $(".slider .slider__bottom-right .current_page");
-            let indexPage = index + 1;
-            number.text(indexPage.toString().padStart(2,0));
-        }
-    }
+//Missions Slider Button Prev-Next
+const buttonSlider = document.querySelector(".missions__item-img .slider_button")
+console.log(buttonSlider)
+buttonSlider.addEventListener("click",function(e){
+    e.preventDefault();
 })
+
+$(".slider_button .button_prev").on("click", function (e) {
+    $carouselMissions.stop().flickity("previous");
+});
+$(".slider_button .button_next").on("click", function (e) {
+    $carouselMissions.stop().flickity("next");
+});
