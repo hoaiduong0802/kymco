@@ -30,6 +30,20 @@ $carouselMissions.flickity({
     wrapAround:true,
     autoPlay:false,
 })
+
+//Slider Hot Items
+let $carouselHotitem = $(".hotitem .hotitem__wrap");
+$carouselHotitem.flickity({
+    //option
+    prevNextButtons: false,
+    contain:true,
+    wrapAround:true,
+    // autoPlay: true,
+    pageDots: false,
+    watchCSS:true,
+    // imagesLoaded: true,
+})
+
 // Test Hieght
 // const pageY = document.addEventListener('scroll', function () {
 //     console.log(window.pageYOffset)

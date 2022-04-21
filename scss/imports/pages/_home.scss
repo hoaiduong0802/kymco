@@ -1,9 +1,9 @@
 .slider{
     position: relative;
     &__item{
-        height: 100vh;
-        width: 100%;
         &-content{
+            height: 100vh;
+            width: 100%;
             .text{
                 position: absolute;
                 top: 50%;
@@ -25,12 +25,9 @@
                     margin-left: 30px;
                 }
             }
-            // position: absolute;
-            // width: 100%;
-            // height: 100%;
             img{
-                height: 100vh;
-                width: 100vw;
+                height: 100%;
+                width: 100%;
                 object-fit: cover;
             }
         }
@@ -88,6 +85,9 @@
     }
     @include sm{
         &__item{
+            &-content{
+                height: 250px;
+            }
             .text{
                 span{
                     font-size: 15.4rem;
@@ -111,10 +111,9 @@
 }
 @include xs{
     .slider{
-        height: 183px;
-        width: 100%;
         &__item{
-            height: 183px;
+            height: 230px;
+            width: 100%;
             &-content{
                 position: relative;
                 height: 100%;
@@ -149,14 +148,15 @@
             position: absolute;
             display: block;
             &-left{
-                span{
-                    display: none;
-                }
-                img{
-                    position: absolute;
-                    bottom: 10px;
-                    width: 10px;
-                }
+                display: none;
+                // span{
+                //     display: none;
+                // }
+                // img{
+                //     position: absolute;
+                //     bottom: 10px;
+                //     width: 10px;
+                // }
             }
             &-right{
                 display: none;
@@ -233,6 +233,63 @@
         }
     }
 }
+@include xs{
+    .missions{
+        margin: auto 10px;
+        &__item{
+            height: auto;
+            flex-direction: column;
+            &-content{
+                max-width: unset;
+                padding-left: unset;
+                h2,p{
+                    width: auto;
+                    padding-bottom: 15px;
+                }
+                h2{
+                    &::before{
+                        width: 50px;
+                        left: -10px;
+                    }
+                }
+            }
+            &-img{
+                .slider_button{
+                    // max-height: 40px;
+                    width: 100px;
+                    left: unset;
+                    align-items: center;
+                    padding: 10px 0px;
+                    a{
+                        display: inline-flex;
+                        img{
+                            width: 10px;
+                        }
+                        &:first-child{
+                            padding-right: 15px;
+                        }
+                        &:last-child{
+                            padding-left: 15px;
+                        }
+                    }
+                    span{
+                        height: 25px;
+                    }
+                }
+                .slider_img{
+                    height: 250px;
+                    width: 100%;
+                    margin: 0 auto;
+                    img{
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+    }
+}
 .hotitems{
     &.pdsection{
         padding-top: unset;
@@ -245,6 +302,15 @@
             padding-top: 80px;
             @include mid(true);
             justify-content: space-between;
+            &::after{
+                content: 'flickity';
+                display: none;
+            }
+            @include minW(767px){
+                &::after{
+                    content: '';
+                }
+            }
             &-products{
                 position: relative;
                 .button{
@@ -263,10 +329,28 @@
                         left: 13px;
                     }
                 }
+                img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+        @include xs{
+            &__wrap{
+                display: block;
+                align-items: unset;
+                height: auto !important;
+                &-products{
+                    height: auto;
+                    width: 230px;
+                }
             }
         }
         &__bottom{
             &.button{
+                padding:15px 20px;
+                border-radius: 25px;
                 position: absolute;
                 margin-top: 70px;
                 left: 50%;
@@ -276,33 +360,44 @@
     }
     @include xs{
         .hotitem{
+            flex-direction: column;
             &__wrap{
                 padding-top: 45px;
-                height: 350px;
                 &-products{
-                    height: 100%;
-                    overflow: hidden;
+                    height: 350px;
+                    margin: 0px 13px;
                     img{
                         height: 100%;
                         width: 100%;
                         object-fit: cover;
-                        overflow: hidden;
                     }
                     .button{
-                        padding: 0 10px;
+                        padding: 10px 15px;
                         height: 20px;
                         display: inline-flex;
                         align-items: center;
-                        left: -20px;
-                        top: 100px;
+                        top: 35%;
+                        transform: translateY(-35%);
+                        left: 10px ;
                         a{
                             font-size: 1rem;
                         }
+                        // &:first-child{
+                        //     // top: 35% !important;
+                        //     // transform: translateY(-35%);
+                        //     // left: 10px !important;
+                        // }
                     }
                     &:nth-child(2){
                         .button{
-                            top: 90px;
-                            left: -20px;
+                            top: 31%;
+                            transform: translateY(-31%);
+                            left: 15px ;
+                        }
+                    }
+                    &:last-child{
+                        .button{
+                            left: 5px;
                         }
                     }
                 }
@@ -312,7 +407,7 @@
                     text-align: center;
                     position: inherit;
                     margin-top: 25px;
-                    @include transform(unset)
+                    @include transform(unset);
                 }
             }
         }
@@ -329,6 +424,8 @@
     background: url(../img/origin_banner_products.jpg);
     @include bg;
     height: 650px;
+    margin-top: 120px;
+    position: relative;
     &__content{
         display: inline-block;
         padding-bottom: 50px;
@@ -346,15 +443,15 @@
     .chooseitem{
         background: url(../img/banner_products_mobile.jpg);
         @include bg ;
-        height: 150px;
+        height: 300px;
         position: relative;
         padding: unset !important;
         margin: 60px 0;
         .container{
             position: absolute;
-            height: 100%;
-            top: 10px;
             left: 0;
+            top: 50%;
+            @include transform(translateY(-50%));
             .chooseitem__content{
                 padding-bottom: 10px;
                 h2{
@@ -365,7 +462,6 @@
         }
     }
 }
-
 .news{
     position: relative;
     &__content{
@@ -479,6 +575,8 @@
             &-button{
                 width: 100%;
                 text-align: center;
+                padding: 10px 0px !important;
+                border-radius: 15px !important;
             }
         }
     }
@@ -501,15 +599,11 @@
     }
 }
 .network{
-    height: 650px;
-    position: relative;
     &__background{
-        position: absolute;
-        top: 0;
-        z-index: -1;
-        width: 100%;
+        max-height: 650px;
         img{
-            width: 100%;
+            display: flex;
+            margin: 0 auto;
         }
     }
     &__content{
