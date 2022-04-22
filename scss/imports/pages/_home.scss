@@ -195,7 +195,7 @@
             position: relative;
             .slider_button{
                 position: absolute;
-                left: -130px;
+                left: -135px;
                 bottom: 0;
                 max-height: 60px;
                 width: 130px;
@@ -720,7 +720,7 @@
     }
 }
 .network{
-    background: url(/img/background_footer_home.jpg);
+    background: url(../img/background_footer_home.jpg);
     @include bg;
     height: 650px;
     &__content{
@@ -737,9 +737,26 @@
         width: max-content;
         transform: translateX(-50%);
         img{
-            height: 900px;
+            height: 1010px;
             object-fit: cover;
             cursor: pointer;
+        }
+    }
+    &__button{
+        position: absolute;
+        bottom: 85px;
+        left: 50%;
+        height: 60px;
+        width: 355px;
+        background-color: red;
+        border-radius: 30px;
+        @include mid(true);
+        display: inline-flex;
+        @include transform(translateX(-50%));
+        a{
+            @include text(2.5rem,DIN EngA,null,$white-cl,uppercase);
+            letter-spacing:0.04em ;
+            text-decoration: none;
         }
     }
 }
