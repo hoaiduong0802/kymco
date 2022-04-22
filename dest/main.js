@@ -84,7 +84,6 @@ menuMobile()
 
 //Missions Slider Button Prev-Next
 const buttonSlider = document.querySelector(".missions__item-img .slider_button")
-console.log(buttonSlider)
 buttonSlider.addEventListener("click",function(e){
     e.preventDefault();
 })
@@ -95,3 +94,19 @@ $(".slider_button .button_prev").on("click", function (e) {
 $(".slider_button .button_next").on("click", function (e) {
     $carouselMissions.stop().flickity("next");
 });
+
+//Earth Rotate JQuery
+// var earth = $(".network .network__background img");
+// $(window).on("mousemove",function(e){
+//     var x = (e.clientX / window.innerWidth)*25;
+//     earth.css({
+//         transform: `rotate(${x}deg)`,
+//     }) 
+// });
+
+//Earth Rotate JavaScript
+let earth = document.querySelector(".network .network__background img");
+window.addEventListener("mousemove",function(e){
+    let x = (e.clientX / window.innerWidth)*25;
+    earth.style.transform = `rotate(${x}deg)`;
+})
